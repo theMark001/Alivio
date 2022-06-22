@@ -1,1 +1,1 @@
-Please use 'sass --watch scss/common.scss css/common.css' for start observation and preprocessing SCSS to CSS
+Please use 'sass --watch scss:css' for start observation and preprocessing SCSS to CSS
