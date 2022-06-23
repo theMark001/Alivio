@@ -338,7 +338,7 @@ template {
 }
 
 body {
-  font-family: Latio;
+  font-family: Lato;
   color: #424242;
 }
 
@@ -357,12 +357,18 @@ button {
 }
 
 .header {
-  padding: 17px 0;
+  padding: 28px 0;
+  min-height: 85px;
+  box-sizing: border-box;
 }
 .header__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.header__logo_img:hover {
+  transition: 0.6s;
+  transform: rotateX(360deg);
 }
 .header__navigation_link {
   font-weight: 500;
@@ -371,11 +377,19 @@ button {
   color: #292929;
   margin-right: 70px;
 }
+.header__navigation_link:hover {
+  transition: 0.4s;
+  color: #01996D;
+}
 .header__sign_link {
   font-weight: 400;
   font-size: 20px;
   line-height: 24px;
   color: #000;
+}
+.header__sign_link:hover {
+  transition: 0.4s;
+  color: #01996D;
 }
 .header__sign_button {
   font-weight: 400;
@@ -387,6 +401,12 @@ button {
   background-color: #01996D;
   margin-left: 35px;
   cursor: pointer;
+}
+.header__sign_button:hover {
+  transition: color 0.4s, background-color 0.4s;
+  background-color: transparent;
+  color: #01996D;
+  border: 1px solid #01996D;
 }
 
 .home {
@@ -405,7 +425,7 @@ button {
   line-height: 74px;
   color: #01996D;
   margin-bottom: 30px;
-  width: 440px;
+  max-width: 440px;
 }
 .home__text_paragraph {
   font-weight: 400;
@@ -413,7 +433,7 @@ button {
   line-height: 31px;
   color: #484848;
   margin-bottom: 60px;
-  width: 420px;
+  max-width: 420px;
 }
 .home__text_button {
   font-weight: 400;
@@ -422,11 +442,19 @@ button {
   color: #fff;
   padding: 20px 50px;
   background-color: #01996D;
+  border-radius: 4px;
+}
+.home__text_button:hover {
+  transition: color 0.4s, background-color 0.4s;
+  background-color: transparent;
+  color: #01996D;
+  border: 1px solid #01996D;
 }
 
 .steps {
   padding-top: 170px;
   box-sizing: border-box;
+  overflow: hidden;
 }
 .steps__title {
   font-weight: 600;
@@ -446,7 +474,7 @@ button {
   line-height: 157%;
   width: 50%;
   color: #01996D;
-  margin-top: -30px;
+  margin-top: 0px;
 }
 .steps__text_paragraph {
   font-weight: 500;
@@ -460,7 +488,7 @@ button {
   gap: 10px;
 }
 .steps__item {
-  width: 390px;
+  max-width: 390px;
 }
 .steps__item:nth-child(2) {
   margin-top: 280px;
@@ -502,7 +530,12 @@ button {
 .about-us__container {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+}
+@media (max-width: 1285px) {
+  .about-us__container {
+    flex-direction: column;
+    gap: 30px;
+  }
 }
 .about-us__text {
   color: #fff;
@@ -513,14 +546,14 @@ button {
   font-weight: 700;
   font-size: 50px;
   line-height: 157%;
-  width: 425px;
+  max-width: 425px;
 }
 .about-us__text_paragraph {
   font-weight: 600;
   font-size: 25px;
   line-height: 157%;
-  width: 380px;
-  margin-top: -35px;
+  max-width: 380px;
+  margin-top: 0px;
   margin-bottom: 45px;
 }
 .about-us__text_button {
@@ -532,11 +565,29 @@ button {
   line-height: 25px;
   color: #fff;
 }
+.about-us__text_button:hover {
+  transition: color 0.4s, background-color 0.4s;
+  background-color: transparent;
+  color: #01996D;
+  border: 1px solid #01996D;
+}
 .about-us__video {
-  border-radius: 20px;
-  background-image: url(../img/About_us_photo.jpg);
-  width: 826px;
-  height: 516.11px;
+  width: 60%;
+  height: 515px;
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+}
+@media (max-width: 1285px) {
+  .about-us__video {
+    width: 100%;
+    height: 515px;
+  }
+}
+.about-us__video_photo {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 .about-us__video_container {
   position: absolute;
@@ -544,14 +595,25 @@ button {
   height: 516.11px;
 }
 .about-us__video_button {
+  width: 80px;
+  height: 80px;
+  padding: 0;
   border-radius: 50%;
-  border: 3px solid #fff;
-  padding: 21px 19px 21px 25px;
-  position: relative;
-  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   margin: auto;
-  margin-top: 217px;
-  background-color: transparent;
+  background: none;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+}
+.about-us__video_button_svg {
+  width: 100%;
+  position: relative;
+  z-index: 2;
 }
 
 .about-product {
@@ -642,16 +704,16 @@ button {
   font-size: 50px;
   line-height: 157%;
   color: #01996D;
-  width: 584px;
-  margin-top: -15px;
+  max-width: 584px;
+  margin-top: 0px;
 }
 .about-product__text_paragraph {
   font-weight: 400;
   font-size: 20px;
   line-height: 31px;
   color: #484848;
-  width: 530px;
-  margin-top: -15px;
+  max-width: 530px;
+  margin-top: 0px;
   margin-bottom: 40px;
 }
 .about-product__text_button {
@@ -663,6 +725,12 @@ button {
   padding: 20px 50px;
   border-radius: 4px;
 }
+.about-product__text_button:hover {
+  transition: color 0.4s, background-color 0.4s;
+  background-color: transparent;
+  color: #01996D;
+  border: 1px solid #01996D;
+}
 
 .footer {
   background-color: #245852;
@@ -672,6 +740,10 @@ button {
   display: flex;
   flex-direction: column;
 }
+.footer__logo_img:hover {
+  transition: 0.6s;
+  transform: rotateX(360deg);
+}
 .footer__item {
   margin-top: 60px;
   font-weight: 600;
@@ -679,10 +751,17 @@ button {
   line-height: 30px;
   color: #fff;
 }
+.footer__item:hover {
+  transition: 0.6s;
+  color: #01996D;
+}
 
 @media screen and (max-width: 1280px) {
   .header__navigation_link {
     margin-right: 5px;
+  }
+  .about-us__text_title {
+    max-width: 615px;
   }
 }
 @media screen and (max-width: 1285px) {
@@ -701,6 +780,13 @@ button {
   .steps__item {
     width: 100%;
   }
+  .steps__item:nth-child(3) {
+    margin-top: 0px;
+  }
+  .steps__item:nth-child(2) {
+    margin-top: 60px;
+    margin-bottom: 50px;
+  }
   .about-us {
     padding: 120px 0 100px;
   }
@@ -716,6 +802,10 @@ button {
     margin-left: 0px;
     width: 100%;
   }
+  .about-product__info_card {
+    position: relative;
+    margin-bottom: 115px;
+  }
 }
 @media screen and (max-width: 980px) {
   .header__navigation {
@@ -727,6 +817,14 @@ button {
   .home__text {
     margin: 0 auto;
     width: 100%;
+  }
+}
+@media screen and (max-width: 395px) {
+  .header__sign_link {
+    display: none;
+  }
+  .header__sign_button {
+    padding: 10px 40px;
   }
 }
 

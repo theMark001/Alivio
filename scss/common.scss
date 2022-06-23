@@ -3,7 +3,7 @@
 @import "normalize";
 
 body {
-    font-family: Latio;
+    font-family: Lato;
     color: #424242;
 }
 
@@ -22,12 +22,21 @@ button {
 }
 
 .header {
-    padding: 17px 0;
+    padding: 28px 0;
+    min-height: 85px;
+    box-sizing: border-box;
 
     &__container {
         display: flex;
         justify-content: space-between;
         align-items: center;
+    }
+
+    &__logo_img {
+        &:hover {
+            transition: .6s;
+            transform: rotateX(360deg);
+        }
     }
 
     &__navigation {
@@ -38,6 +47,11 @@ button {
             line-height: 24px;
             color: $header__link_color;
             margin-right: 70px;
+
+            &:hover {
+                transition: .4s;
+                color: $main_color;
+            }
         }
     }
 
@@ -48,6 +62,11 @@ button {
             font-size: 20px;
             line-height: 24px;
             color: #000;
+
+            &:hover {
+                transition: .4s;
+                color: $main_color;
+            }
         }
 
         &_button {
@@ -60,6 +79,13 @@ button {
             background-color: $main_color;
             margin-left: 35px;
             cursor: pointer;
+
+            &:hover {
+                transition: color .4s, background-color .4s;
+                background-color: transparent;
+                color: $main-color;
+                border: 1px solid $main-color;
+            }
         }
     }
 }
@@ -83,7 +109,7 @@ button {
             line-height: 74px;
             color: $main_color;
             margin-bottom: 30px;
-            width: 440px;
+            max-width: 440px;
         }
 
         &_paragraph {
@@ -92,7 +118,7 @@ button {
             line-height: 31px;
             color: $second_text_color;
             margin-bottom: 60px;
-            width: 420px;
+            max-width: 420px;
         }
 
         &_button {
@@ -102,6 +128,14 @@ button {
             color: #fff;
             padding: 20px 50px;
             background-color: $main_color;
+            border-radius: 4px;
+
+            &:hover {
+                transition: color .4s, background-color .4s;
+                background-color: transparent;
+                color: $main-color;
+                border: 1px solid $main-color;
+            }
         }
     }
 }
@@ -109,6 +143,7 @@ button {
 .steps {
     padding-top: 170px;
     box-sizing: border-box;
+    overflow: hidden;
 
     &__title {
         font-weight: 600;
@@ -129,7 +164,7 @@ button {
             line-height: 157%;
             width: 50%;
             color: $main_color;
-            margin-top: -30px;
+            margin-top: 0px;
         }
 
         &_paragraph {
@@ -147,7 +182,7 @@ button {
     }
 
     &__item {
-        width: 390px;
+        max-width: 390px;
 
         &:nth-child(2) {
             margin-top: 280px;
@@ -197,7 +232,11 @@ button {
     &__container {
         display: flex;
         justify-content: space-between;
-        flex-wrap: wrap;
+
+        @media (max-width: 1285px) {
+            flex-direction: column;
+            gap: 30px;
+        }
     }
 
     &__text {
@@ -209,15 +248,15 @@ button {
             font-weight: 700;
             font-size: 50px;
             line-height: 157%;
-            width: 425px;
+            max-width: 425px;
         }
 
         &_paragraph {
             font-weight: 600;
             font-size: 25px;
             line-height: 157%;
-            width: 380px;
-            margin-top: -35px;
+            max-width: 380px;
+            margin-top: 0px;
             margin-bottom: 45px;
         }
 
@@ -229,14 +268,34 @@ button {
             font-size: 20px;
             line-height: 25px;
             color: #fff;
+
+            &:hover {
+                transition: color .4s, background-color .4s;
+                background-color: transparent;
+                color: $main-color;
+                border: 1px solid $main-color;
+            }
         }
     }
 
     &__video {
-        border-radius: 20px;
-        background-image: url(../img/About_us_photo.jpg);
-        width: 826px;
-        height: 516.11px;
+        width: 60%;
+        height: 515px;
+        position: relative;
+        border-radius: 16px;
+        overflow: hidden;
+
+
+        @media (max-width: 1285px) {
+            width: 100%;
+            height: 515px;
+        }
+
+        &_photo {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
 
         &_container {
             position: absolute;
@@ -245,14 +304,26 @@ button {
         }
 
         &_button {
+            width: 80px;
+            height: 80px;
+            padding: 0;
             border-radius: 50%;
-            border: 3px solid #fff;
-            padding: 21px 19px 21px 25px;
-            position: relative;
-            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
             margin: auto;
-            margin-top: 217px;
-            background-color: transparent;
+            background: none;
+            border: none;
+            cursor: pointer;
+            overflow: hidden;
+
+            &_svg {
+                width: 100%;
+                position: relative;
+                z-index: 2;
+            }
         }
     }
 }
@@ -363,8 +434,8 @@ button {
             font-size: 50px;
             line-height: 157%;
             color: $main_color;
-            width: 584px;
-            margin-top: -15px;
+            max-width: 584px;
+            margin-top: 0px;
         }
 
         &_paragraph {
@@ -372,8 +443,8 @@ button {
             font-size: 20px;
             line-height: 31px;
             color: $second_text_color;
-            width: 530px;
-            margin-top: -15px;
+            max-width: 530px;
+            margin-top: 0px;
             margin-bottom: 40px;
         }
 
@@ -385,6 +456,13 @@ button {
             background-color: $main_color;
             padding: 20px 50px;
             border-radius: 4px;
+
+            &:hover {
+                transition: color .4s, background-color .4s;
+                background-color: transparent;
+                color: $main-color;
+                border: 1px solid $main-color;
+            }
         }
     }
 }
@@ -398,12 +476,22 @@ button {
         flex-direction: column;
     }
 
+    &__logo_img:hover {
+        transition: .6s;
+        transform: rotateX(360deg);
+    }
+
     &__item {
         margin-top: 60px;
         font-weight: 600;
         font-size: 25px;
         line-height: 30px;
         color: #fff;
+
+        &:hover {
+            transition: .6s;
+            color: $main-color;
+        }
     }
 }
 
@@ -414,6 +502,10 @@ button {
 @media screen and (max-width: 1280px) {
     .header__navigation_link {
         margin-right: 5px;
+    }
+
+    .about-us__text_title {
+        max-width: 615px;
     }
 }
 
@@ -438,6 +530,15 @@ button {
         width: 100%;
     }
 
+    .steps__item:nth-child(3) {
+        margin-top: 0px;
+    }
+    
+    .steps__item:nth-child(2) {
+        margin-top: 60px;
+        margin-bottom: 50px;
+    }
+
     .about-us {
         padding: 120px 0 100px;
 
@@ -458,8 +559,10 @@ button {
     }
 
     .about-product__info_card {
-        // position: relative;
+        position: relative;
+        margin-bottom: 115px;
     }
+
 }
 
 
@@ -475,5 +578,15 @@ button {
     .home__text {
         margin: 0 auto;
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 395px) {
+    .header__sign_link {
+        display: none;
+    }
+
+    .header__sign_button {
+        padding: 10px 40px;
     }
 }
