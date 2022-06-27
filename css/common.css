@@ -401,12 +401,12 @@ button {
   background-color: #01996D;
   margin-left: 35px;
   cursor: pointer;
+  border: 1px solid #01996D;
 }
 .header__sign_button:hover {
   transition: color 0.4s, background-color 0.4s;
   background-color: transparent;
   color: #01996D;
-  border: 1px solid #01996D;
 }
 
 .home {
@@ -427,6 +427,12 @@ button {
   margin-bottom: 30px;
   max-width: 440px;
 }
+@media (max-width: 1024px) {
+  .home__text_title {
+    font-size: 50px;
+    line-height: 60px;
+  }
+}
 .home__text_paragraph {
   font-weight: 400;
   font-size: 20px;
@@ -434,6 +440,12 @@ button {
   color: #484848;
   margin-bottom: 60px;
   max-width: 420px;
+}
+@media (max-width: 1024px) {
+  .home__text_paragraph {
+    font-size: 18px;
+    line-height: 22px;
+  }
 }
 .home__text_button {
   font-weight: 400;
@@ -443,12 +455,12 @@ button {
   padding: 20px 50px;
   background-color: #01996D;
   border-radius: 4px;
+  border: 1px solid #01996D;
 }
 .home__text_button:hover {
   transition: color 0.4s, background-color 0.4s;
   background-color: transparent;
   color: #01996D;
-  border: 1px solid #01996D;
 }
 
 .steps {
@@ -509,6 +521,12 @@ button {
   font-size: 150px;
   color: rgba(1, 153, 109, 0.2);
 }
+@media (max-width: 1024px) {
+  .steps__item_label {
+    font-size: 20px;
+    line-height: 100%;
+  }
+}
 .steps__item_title {
   padding-left: 80px;
 }
@@ -563,13 +581,13 @@ button {
   font-weight: 400;
   font-size: 20px;
   line-height: 25px;
+  border: 1px solid #01996D;
   color: #fff;
 }
 .about-us__text_button:hover {
   transition: color 0.4s, background-color 0.4s;
   background-color: transparent;
   color: #01996D;
-  border: 1px solid #01996D;
 }
 .about-us__video {
   width: 60%;
@@ -591,7 +609,6 @@ button {
 }
 .about-us__video_container {
   position: absolute;
-  width: 826px;
   height: 516.11px;
 }
 .about-us__video_button {
@@ -724,12 +741,12 @@ button {
   background-color: #01996D;
   padding: 20px 50px;
   border-radius: 4px;
+  border: 1px solid #01996D;
 }
 .about-product__text_button:hover {
   transition: color 0.4s, background-color 0.4s;
   background-color: transparent;
   color: #01996D;
-  border: 1px solid #01996D;
 }
 
 .footer {
@@ -757,14 +774,20 @@ button {
 }
 
 @media screen and (max-width: 1280px) {
-  .header__navigation_link {
-    margin-right: 5px;
+  .header__navigation {
+    display: none;
   }
   .about-us__text_title {
     max-width: 615px;
   }
 }
 @media screen and (max-width: 1285px) {
+  .home {
+    background-image: url("../img/promo-bg-mobile.jpg");
+  }
+  .steps__item {
+    max-width: none;
+  }
   .steps__text {
     flex-wrap: wrap;
   }
@@ -808,9 +831,6 @@ button {
   }
 }
 @media screen and (max-width: 980px) {
-  .header__navigation {
-    display: none;
-  }
   .container {
     max-width: 950px;
   }

@@ -79,12 +79,12 @@ button {
             background-color: $main_color;
             margin-left: 35px;
             cursor: pointer;
+            border: 1px solid $main-color;
 
             &:hover {
                 transition: color .4s, background-color .4s;
                 background-color: transparent;
                 color: $main-color;
-                border: 1px solid $main-color;
             }
         }
     }
@@ -110,6 +110,11 @@ button {
             color: $main_color;
             margin-bottom: 30px;
             max-width: 440px;
+
+            @media (max-width: 1024px) {
+                font-size: 50px;
+                line-height: 60px;
+              }
         }
 
         &_paragraph {
@@ -119,6 +124,11 @@ button {
             color: $second_text_color;
             margin-bottom: 60px;
             max-width: 420px;
+
+            @media (max-width: 1024px) {
+                font-size: 18px;
+                line-height: 22px;
+              }
         }
 
         &_button {
@@ -129,12 +139,12 @@ button {
             padding: 20px 50px;
             background-color: $main_color;
             border-radius: 4px;
+            border: 1px solid $main-color;
 
             &:hover {
                 transition: color .4s, background-color .4s;
                 background-color: transparent;
                 color: $main-color;
-                border: 1px solid $main-color;
             }
         }
     }
@@ -205,6 +215,11 @@ button {
             font-weight: 400;
             font-size: 150px;
             color: rgba(1, 153, 109, 0.2);
+
+            @media (max-width: 1024px) {
+                font-size: 20px;
+                line-height: 100%;
+              }
         }
 
         &_title {
@@ -267,13 +282,13 @@ button {
             font-weight: 400;
             font-size: 20px;
             line-height: 25px;
+            border: 1px solid $main-color;
             color: #fff;
 
             &:hover {
                 transition: color .4s, background-color .4s;
                 background-color: transparent;
                 color: $main-color;
-                border: 1px solid $main-color;
             }
         }
     }
@@ -299,7 +314,6 @@ button {
 
         &_container {
             position: absolute;
-            width: 826px;
             height: 516.11px;
         }
 
@@ -456,12 +470,12 @@ button {
             background-color: $main_color;
             padding: 20px 50px;
             border-radius: 4px;
+            border: 1px solid $main-color;
 
             &:hover {
                 transition: color .4s, background-color .4s;
                 background-color: transparent;
                 color: $main-color;
-                border: 1px solid $main-color;
             }
         }
     }
@@ -500,8 +514,8 @@ button {
 
 
 @media screen and (max-width: 1280px) {
-    .header__navigation_link {
-        margin-right: 5px;
+    .header__navigation {
+        display: none;
     }
 
     .about-us__text_title {
@@ -510,6 +524,14 @@ button {
 }
 
 @media screen and (max-width: 1285px) {
+    .home {
+        background-image: url("../img/promo-bg-mobile.jpg");
+    }
+
+    .steps__item {
+        max-width: none;
+    }
+
     .steps__text {
         flex-wrap: wrap;
 
@@ -533,7 +555,7 @@ button {
     .steps__item:nth-child(3) {
         margin-top: 0px;
     }
-    
+
     .steps__item:nth-child(2) {
         margin-top: 60px;
         margin-bottom: 50px;
@@ -567,9 +589,6 @@ button {
 
 
 @media screen and (max-width: 980px) {
-    .header__navigation {
-        display: none;
-    }
 
     .container {
         max-width: 950px;
